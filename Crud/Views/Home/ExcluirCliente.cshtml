@@ -1,0 +1,56 @@
+﻿@model Crud.Models.Cliente
+
+@{
+    ViewBag.Title = "ExcluirCliente";
+}
+
+<h2>Excluir Cliente</h2>
+
+<h3>Você tem certesa que deseja exluir esse cliente?</h3>
+<div>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-group">
+            <div>
+                @Html.HiddenFor(model => model.IdCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+        </div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdCliente)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+        </dl>
+
+
+        <div class="form-actions no-color">
+
+            <a id="incluir" class="btn btn-primary" role="button" href='@Url.Action("Index", "Home")'> Retornar</a> |
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        </div>
+
+    }
+</div>

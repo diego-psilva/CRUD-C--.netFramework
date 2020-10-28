@@ -1,0 +1,45 @@
+﻿@model List <Crud.Models.Cliente>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+<div class="container">
+    <h2>Clientes</h2>
+    <hr />
+    <div id="cabecalho" class="row">
+        <div class="col-md-12">
+            <a id="incluir" class="btn btn-success" role="button" href='@Url.Action("IncluirCliente", "Home")'><i class="glyphicon glyphicon-plus"></i> Cadastrar</a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <table id="grid_cadastro" class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Acão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-id="@item.IdCliente">
+                                <td>@item.Nome</td>
+                                <td>@item.Email</td>
+                                <td>
+                                    <a class="btn btn-primary btn-consultar" role="button" href='@Url.Action("ConsultarCliente", "Home", new {id = item.IdCliente})'><i class="glyphicon glyphicon-user"></i> Consultar</a>
+                                    <a class="btn btn-warning btn-alterar" role="button" href='@Url.Action("AlterarCliente", new {id = item.IdCliente})'><i class="glyphicon glyphicon-pencil"></i>Alterar</a>
+                                    <a class="btn btn-danger btn-excluir" role="button" href='@Url.Action("ExcluirCliente", "Home", new {id = item.IdCliente})'><i class="glyphicon glyphicon-trash"></i>Excluir</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

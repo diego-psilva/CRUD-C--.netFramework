@@ -1,0 +1,46 @@
+﻿@model Crud.Models.Cliente
+
+@{
+    ViewBag.Title = "ConsultarCliente";
+}
+
+<h2>Consulta Cliente</h2>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <dl class="dl-horizontal">
+                <dt>Ident</dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IdCliente)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+            </dl>
+
+        </div>
+    </div>
+
+</div>
+<hr />
+<div class="col-md-12">
+    <a id="incluir" class="btn btn-primary" role="button" href='@Url.Action("Index", "Home")'> Retornar</a>
+</div>
+<br />
+
